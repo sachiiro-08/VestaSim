@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body{
+  background-color: #0d1321;
+  overflow-x: hidden;
+}
+
+ul{
+  list-style: none;
+}
+
+.active{
+  color: #0d1321;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/*atong navbar*/
+.navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  color: #f0ebd8;
+  background-color: #1d2d44;
+  box-shadow: 0 0 10px black;
+}
+
+.navlinks{
+  display: flex;
+  align-items: center;
+}
+
+.navlinks li{
+  position: relative;
+  margin: 0 30px;
+}
+
+a{
+  text-decoration: none;
+  color: #f0ebd8;
+}
+
+.navlinks li a:hover{
+  color: #0088a9;
+}
+
+/*button dropdown*/
+.menubtn{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+ul li {
+  position: relative; /* Ensure the dropdown positions relative to the parent */
+}
+
+ul li ul.dropdown {
+  position: absolute;
+  top: 100%; /* Directly below the parent */
+  left: 0;
+  width: 120px; /* Increase width to avoid quick disappearing */
+  background: #1d2d44;
+  z-index: 999;
+  display: none;
+}
+
+ul li ul.dropdown li {
+  padding: 10px;
+  width: 100%;
+}
+
+ul li:hover ul.dropdown,
+ul li ul.dropdown:hover {
+  display: block;
+}
+
+/*home section (bg, simulate and welcome)*/
+#home{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('bg-housse.webp');
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0px 4px;
+  margin-bottom: 100px;
+}
+
+.home-content{
+  margin-bottom: 150px;
+  color: #f0ebd8;
+  text-align: center;
+}
+
+.home-content h2{
+  text-shadow: 5px 5px 10px black;
+  font-size: 4vmin;
+  margin-left: 0px 30px;
+}
+
+.line{
+  width: 200px;
+  height: 4px;
+  background: #748cab;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.home-content h1{
+  text-shadow: 5px 5px 10px black;
+  font-size: 7vmin;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.ctn, #ctn{
+  padding: 8px 15px;
+  background:#3e5c76;
+  border-radius: 30px;
+  color: #f0ebd8;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+/*buy and sell section*/
+#buysell{
+  width: 80%;
+  margin: 80px auto;
+}
+
+.row-buysell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 30px;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 4vmin;
+  color: #f0ebd8;
+  margin: 50px 10px;
+}
+
+.col-buysell{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 10px;
+width: calc(33.33% - 20px);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.col-buysell {
+  background: #f0ebd8;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+  transition: transform 0.3s;
+}
+
+.col-buysell:hover {
+  transform: scale(1.03);
+}
+
+.col-buysell img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.apartment-info {
+  padding: 15px;
+}
+
+.apartment-info h3 {
+  color: #0d1321;
+  text-align: center;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2vmin;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+}
+
+.view-btn {
+  font-size: 3vmin;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  color: #f0ebd8;
+  cursor: pointer;
+  font-size: 3vmin;
+  background-color: #0d1321;
+  transition: all 0.3s ease 0s;
+}
+
+/*animation of img*/
+img {
+    transition: transform.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+
+  .ctn:hover {
+    background:whitesmoke;
+    color: #fc036b;
+    box-shadow: 2px 2px 5px #00000056;
+  }
+
+/*para responsive sad sa mobile*/
+@media only screen and (max-width: 850px){
+  .navbar{
+    padding: 0;
+  }
+
+  .ctn{
+    background-color: #0d1321;
+    transition: all 0.3s ease 0s;
+  }
+
+  .ctn:hover{
+  background-color: #0d1321;
+  } 
+
+  #ctn{
+    background-color: #0d1321;
+    transition: all 0.3s ease 0s;
+  }
+
+  #ctn:hover{
+    background-color: #0d1321;
+    }
+
+  .menubtn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .navbar{
+    padding: 0;
+    margin: 30px auto;
+  }
+
+  .logo{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  .navlinks{
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    background: #3e5c76;
+    margin-top: -900px;
+    transition: all 0.5s ease;
+  }
+
+  .mobile-menu{
+    margin-top: 0px;
+    border-bottom-right-radius: 30%;
+  }
+
+  .navlinks li{
+    margin: 30px auto;
+  }
+
+  .navlinks li a{
+    transition: all 0.3s ease 0s;
+  }
+
+  .navlinks li a:hover{
+    color: #0088a9;
+  }
+
+  /*buy and sell content*/
+  .row-buysell {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    max-width: 100%;
+    white-space: nowrap;
+    gap: 200px; /* Control ang spacing*/
+    
+  }
+
+  .row-buysell .col-buysell {
+    width: 50%; /*fixed width diri is set na*/
+    flex: 0 0 auto;
+    margin: 0; /*for unnecessary margin*/
+  }
+
+  .col-buysell img {
+    max-width: 100%; /*Ensures image fills the column*/
+    display: inline-block;
+  }
+
+  .col-buysell h4{
+    margin-top: 10px;
+  }
+
+  .footer{
+    padding: 10px;
+  }
+
+  img {
+    transition: transform.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+
+  .ctn:hover {
+    background:whitesmoke;
+    color: #fc036b;
+    box-shadow: 2px 2px 5px #00000056;
+  }
+}
+
+/* Login Form Styling */
+.blur-bg-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  transition: 0.1s ease;
+}
+ 
+/*login*/
+.show-popup .blur-bg-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 720px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background: #748cab;
+  transform: translate(-50%, -100%);
+  box-shadow: 1px 1px 5px #0d1321;
+  border-radius: 5px;
+}
+
+.show-popup .form-popup {
+opacity: 1;
+pointer-events: auto;
+transform: translate(-50%, -50%);
+transition: transform 0.3s ease,  opacity  0.1s;
+}
+
+.form-popup .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #0d1321;
+  cursor: pointer;
+}
+
+.form-popup .form-box{
+  display: flex;
+}
+
+.form-box .form-details{
+  max-width: 330px;
+  width: 100%;
+  color: #f0ebd8;
+  display: flex;
+  padding: 0 20px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 5px 5px 10px black;
+}
+
+.login .form-details {
+  background-image: url('bg-housse.webp');
+  background-size: cover;
+  background-position: center;    
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.signup .form-details {
+  background-image: url('bg-housse.webp');
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.form-box h2{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-box .form-content{
+  width: 100%;
+  padding: 35px;
+}
+
+form .input-field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+form .input-field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 1px 1px 5px #0d1321;
+  border-radius: 20px;
+}
+
+form .input-field label{
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  color: #0d1321;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ label{
+  color: #0088a9;
+  font-size: 0.75rem;
+  transform: translateY(-120%);
+}
+
+.form-box a{
+  color: darkblue;
+  text-decoration: none;
+}
+
+.form-box a:hover{
+  text-decoration: underline;
+}
+
+.bottom-link{
+  color: #f0ebd8;
+}
+
+.form-box :where(.forgot-pass, .policy-text){
+  display: inline-flex;
+  margin-top: 14px;
+  font-size: 0.95rem;
+}
+
+form button {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 0;
+  border-radius: 20px;
+  margin: 25px 0;
+  color: #F0EBD8;
+  cursor: pointer;
+  background-color: #1d2d44;
+  transition: 0.2s ease;
+  box-shadow: 1px 1px 5px #0d1321;
+
+}
+
+form button:hover{
+  background-color: #3E5C76;
+
+}
+
+.form-box .button-link{
+  text-align: center;
+}
+
+.form-popup .signup, .form-popup.show-signup .login {
+display: none;
+}
+
+.form-popup.show-signup .signup {
+display: flex;
+}
+
+.signup .policy-text {
+display: flex;
+align-items: center;
+color: #f0ebd8;
+}
+
+.signup .policy-text input {
+width: 14px;
+height: 14px;
+margin-right: 7px;
+}
+
+@media screen and (max-width: 950px) {
+.navbar .login-btn {
+  font-size: 0.9rem;
+  padding: 7px 10px;
+}
+}
+
+@media screen and (max-width: 760px) {
+.navbar {
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.navlinks {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header-content {
+  width: 95%;
+}
+
+.form-popup{
+  width: 95%;
+}
+
+.form-box .form-details{
+  display: none;
+}
+
+.form-box .form-content{
+  padding: 30px 20px;
+}
+}
+
+/*footer section here*/
+footer {
+  background: #1d2d44;
+  color: #f0ebd8;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+#footer {
+  background: #f8f9fa;
+  padding: 5px 0px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+  font-size: 0.9em;
+}
+
+.footer-section p{
+  text-align: justify;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: #f0ebd8;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #0088a9;
+}
